@@ -20,3 +20,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 Route::get('/', [HomeController::class, 'index']);
 
+use App\Http\Controllers\sériesController;
+Route::get('/', [sériesController::class, 'index']);
+
+use App\Http\Controllers\contactsController;
+Route::get('/', [contactsController::class, 'index']);
+

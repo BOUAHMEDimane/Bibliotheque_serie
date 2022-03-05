@@ -33,13 +33,8 @@
 
   <article class="grid-container">
 
-  @extends('layouts/main')
+     @yield('content')
   
-  @section('content')
-  <h1>Home</h1>
-  @endsection
-  
-  @yield('content')
 
   </article>
 
