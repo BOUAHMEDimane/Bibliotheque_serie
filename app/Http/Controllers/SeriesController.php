@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class sériesController extends Controller
+class SeriesController extends Controller
 {
     function index() {
         return view('series');
