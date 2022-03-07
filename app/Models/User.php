@@ -41,4 +41,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+      /**
+    * Get the user series'
+    */
+   public function series()
+   {
+       return $this->hasMany(Serie::class,'author_id');
+   }
+
 }
