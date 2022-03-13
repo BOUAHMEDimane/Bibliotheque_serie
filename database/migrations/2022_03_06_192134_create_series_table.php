@@ -23,6 +23,7 @@ class CreateSeriesTable extends Migration
             $table->Text('tags');
             $table->datetime('date');
             $table->string('status', 45);
+            $table->timestamps();
             $table->foreign('author_id')
             ->references('id')
             ->on('users')

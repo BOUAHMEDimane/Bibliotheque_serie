@@ -1,9 +1,12 @@
 <?php
 
 namespace Database\Factories;
-use App\Http\Model\User;
+
+use Faker\Generator as Faker;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use App\Models\User;
+
 
 class UserFactory extends Factory
 {
