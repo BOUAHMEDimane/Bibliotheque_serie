@@ -25,6 +25,14 @@
 
     @section('content')
         <h1>Serie</h1>
+        <ul>
+        @foreach ( $serie as $serie )
+
+            <li>{{ $serie->title }}</li>
+
+        @endforeach
+        </ul>
+
     @endsection
 
 

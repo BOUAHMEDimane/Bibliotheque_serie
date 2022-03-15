@@ -18,11 +18,11 @@ use Illuminate\Support\Facades\Route;
 });
 */
 use App\Http\Controllers\HomeController;
-Route::get('/', [HomeController::class, 'index']);
-
 use App\Http\Controllers\SeriesController;
-Route::get('/series', [SeriesController::class, 'index']);
-
 use App\Http\Controllers\ContactsController;
+
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/series', [SeriesController::class, 'index']);
 Route::get('/contact', [ContactsController::class, 'index']);
 
+Route::get('/series/{url}',[SeriesController::class, 'show']);
