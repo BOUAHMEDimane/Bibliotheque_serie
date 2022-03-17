@@ -19,16 +19,18 @@ class SerieFactory extends Factory
     *
     * @return  array
     */
-    public function definition(): array
+    public function definition() 
     {
+        $title = implode(' ', $this->faker->words(rand(1, 3)));
+        $url = str_replace(' ', '_', $title);
         return [
             'author_id' => \App\Models\User::factory(),
-            'title' => $this->faker->title,
-            'content' => $this->faker->text,
-            'acteurs' => $this->faker->text,
-            'url' => $this->faker->url,
-            'tags' => $this->faker->text,
-            'date' => $this->faker->dateTime(),
+            'title' => $title,
+            'content' => $this->faker->realText(1000),
+            'acteurs' => implode(', ', $this->faker->words(rand(5, 10))),
+            'url' => $url,
+            'tags' => implode(', ', $this->faker->words(rand(0, 5))) ,
+            'date' => $this->faker->dateTime,
             'status' => $this->faker->word,
         ];
     }

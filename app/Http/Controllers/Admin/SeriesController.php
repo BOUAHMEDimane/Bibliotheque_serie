@@ -17,12 +17,9 @@ class SeriesController extends Controller
     }
 
     public function show($url) {
-        
-        $serie = DB::table('series')->where('url',$url)->first(); //get first serie with serie_nam == $serie_name
+        $serie = \App\Models\Serie::where('url',$url)->first(); //get first serie with serie_nam == $serie_name
         $author_id = $serie->author_id;
         $author = DB::table('users')->where('id', $author_id)->first();
-        return view('serie/single', compact('serie', 'author'));
+        return view('series', compact('serie', 'author', 'url'));
     }
-
-
 }

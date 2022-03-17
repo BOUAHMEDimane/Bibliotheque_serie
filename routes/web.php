@@ -21,8 +21,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SeriesController;
 use App\Http\Controllers\ContactsController;
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/series', [SeriesController::class, 'index']);
-Route::get('/contact', [ContactsController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/series', [SeriesController::class, 'index'])->name('series');
+Route::get('/series/{url}',[SeriesController::class, 'show'])->name('serie');
+Route::get('/contact', [ContactsController::class, 'index'])->name('contact');
 
-Route::get('/series/{url}',[SeriesController::class, 'show']);
+

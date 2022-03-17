@@ -15,10 +15,10 @@
   <div class="top-bar">
     <div class="top-bar-left">
       <ul class="menu">
-        <li class="menu-text">Super Series</li>
-        <li><a href="/">Home</a></li>
-        <li><a href="/series">Series</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li class="menu-text">Menu</li>
+        <li><a href="{{ route('home')}}">Home</a></li>
+        <li><a href="{{ route('series')}}">Series</a></li>
+        <li><a href="{{ route('contact')}}">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -27,7 +27,7 @@
   <div class="callout large primary">
     <div class="text-center">
       <h1>Series</h1>
-      <h2 class="subheader">Series Master</h2>
+      <h2 class="subheader">Les Top Series </h2>
     </div>
   </div>
 
@@ -37,6 +37,8 @@
     
 
   </article>
+
+  @include('layouts.footer')
   
 
 

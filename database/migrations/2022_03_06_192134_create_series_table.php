@@ -19,12 +19,12 @@ class CreateSeriesTable extends Migration
             $table->MediumText('title');
             $table->LongText('content');
             $table->LongText('acteurs');
-            $table->String('url', 200);
+            $table->char('url', 200);
             $table->Text('tags')->nullable();
             $table->datetime('date');
             $table->string('status', 45);
-            //$table->char('image', 45);
             $table->timestamps();
+            //$table->char('image', 45);
             $table->foreign('author_id')
             ->references('id')
             ->on('users')
