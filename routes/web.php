@@ -25,5 +25,6 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/series', [SeriesController::class, 'index'])->name('series');
 Route::get('/series/{url}',[SeriesController::class, 'show'])->name('serie');
 Route::get('/contact', [ContactsController::class, 'index'])->name('contact');
+Route::post('/contact', [ContactsController::class, 'send'])->name('send');
 
 
