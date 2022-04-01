@@ -19,6 +19,7 @@
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^5.10",
         "phpunit/phpunit": "^9.5.10",
+        "sven/artisan-view": "^3.4",
         "thedoctor0/laravel-factory-generator": "^1.2"
     },
     "autoload": {

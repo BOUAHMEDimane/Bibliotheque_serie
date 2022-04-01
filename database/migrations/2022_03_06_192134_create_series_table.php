@@ -19,7 +19,7 @@ class CreateSeriesTable extends Migration
             $table->MediumText('title');
             $table->LongText('content');
             $table->LongText('acteurs');
-            $table->char('url', 200);
+            $table->String('url', 200);
             $table->Text('tags')->nullable();
             $table->datetime('date');
             $table->string('status', 45);
