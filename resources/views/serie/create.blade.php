@@ -3,80 +3,172 @@
 @section('title','Serie - Create')
 
 @section('content') 
-  
 
-    @if (session('successMsg'))
-        <div class="alert alert-primary" role="alert" data-mdb-color="primary">
-            {{ session('successMsg') }}
-            <h2>aaa</h2>
-        </div>
-    @endif
+    <body>
+        <div class="container mt-5">
 
-    <h2>Créer une nouvelle serie</h2>
-    <form method="post" action="{{route('serie.add')}}">
-        {{ csrf_field() }}
-        <div class="mb-3">
-            <label for="exampleInputtitle" class="form-label" >Titre</label>
-            <input type="text" class="form-control $errors->has('title') ? 'error' : '' " placeholder="Titre de la serie..."  name="title" id="title" required>
-            
-            <!-- Error -->
-            @if ($errors->has('title'))
-                <div class="error">
-                    <p>Veuillez saisir le titre de la série</p> 
-                </div>
+            <!-- Success message -->
+            @if(Session::has('successMsg'))
+            <div class="alert alert-success">
+                {{ session('successMsg') }}    
+            </div>
             @endif
-        </div>
 
-        <div class="mb-3">
-            <label for="exampleInputauteur" class="form-label">Nom de l'auteur </label>
-            <input type="text" class="form-control $errors->has('author_name') ? 'error' : '' " placeholder="Nom de l'auteur..."  name="author_name" id="author_name" required>
-            
-            <!-- Error -->
-            @if ($errors->has('author_name'))
-                <div class="error">
-                    <p>Veuillez saisir le nom de l'auteur</p> 
-                </div>
-            @endif
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputid" class="form-label">Acteurs </label>
-            <input type="text" class="form-control $errors->has('acteurs') ? 'error' : '' " placeholder="les acteur de la série..." name="acteurs" id="acteurs" required>
-            @if ($errors->has('acteurs'))
-                <div class="error">
-                    <p>Veuillez saisir le nom de l'auteur</p> 
-                </div>
-            @endif
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputid" class="form-label">Contenu </label>
-            <input type="text" class="form-control $errors->has('content') ? 'error' : '' " placeholder="Contenu de la serie..." name="content" id="content" required >
-            @if ($errors->has('content'))
-                <div class="error">
-                    <p>Veuillez saisir le contenu de la série</p> 
-                </div>
-            @endif
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputDate" class="form-label">Date de sortie </label>
-            <input type="date" class="form-control $errors->has('date') ? 'error' : '' " name="date" id="date" required >
-            @if ($errors->has('date'))
-                <div class="error">
-                    <p>Veuillez saisir la date </p> 
-                </div>
-            @endif
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputtags" class="form-label">Tags </label>
-            <input type="text" class="form-control " >
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputid" class="form-label ">Photo de couverture de la serie </label>
-            <input type="file" name="image" class="form-control " accept="image/jpg, image/png, image/jpeg" required>
-        </div>
-        <button type="submit" name="send" class="btn btn-primary">Enregistrer</button>
-        <a href="{{route('serie.crud')}}" class="btn btn-danger">Annuler</a>
+            <form  method="post" action="{{route('series.store')}}">
 
-</form>
+            {{ csrf_field() }}
+
+                <div class="form-group">
+                    <label>title</label>
+                    <input type="text" class="form-control  $errors->has('title') ? 'error' : '' " name="title" id="title">
+
+                    <!-- Error -->
+                    @if ($errors->has('title'))
+                    <div class="error">
+                        <p>Veuillez saisir le titre de la série</p> 
+                    </div>
+                    @endif
+                </div>
+
+                <div class="form-group">
+                    <label>Nom de l'auteur'</label>
+                    <input type="text" class="form-control  $errors->has('author_name') ? 'error' : '' " name="author_name"
+                        id="author_name">
+
+                    @if ($errors->has('author_name'))
+                    <div class="error">
+                        <p>Veuillez saisir le nom de l'auteur'</p> 
+                    </div>
+                    @endif
+                </div>
+
+                <div class="form-group">
+                    <label>Acteurs</label>
+                    <input type="text" class="form-control  $errors->has('acteurs') ? 'error' : '' " name="acteurs"
+                        id="acteurs">
+
+                    @if ($errors->has('acteurs'))
+                    <div class="error">
+                    <p>Veuillez saisir les acteurs de la série</p> 
+                    </div>
+                    @endif
+                </div>
+
+                <div class="form-group">
+                    <label>Contenu</label>
+                    <input type="text" class="form-control  $errors->has('content') ? 'error' : '' " name="content"
+                        id="content">
+
+                    @if ($errors->has('content'))
+                    <div class="error">
+                        $errors->first('content') 
+                    </div>
+                    @endif
+                </div>
+
+                <div class="form-group">
+                    <label>date</label>
+                    <textarea class="form-control  $errors->has('date') ? 'error' : '' " name="date" id="date"
+                        rows="4"></textarea>
+
+                    @if ($errors->has('date'))
+                    <div class="error">
+                        <p>Veuillez saisir la date</p> 
+                    </div>
+                    @endif
+                </div>
+
+                <div class="form-group">
+                    <label>Status</label>
+                    <input type="text" class="form-control  $errors->has('status') ? 'error' : '' " name="status"
+                        id="status">
+
+                    @if ($errors->has('status'))
+                    <div class="error">
+                        $errors->first('status') 
+                    </div>
+                    @endif
+                </div>
+
+
+                
+
+
+                <div class="form-group">
+                    <label>Tags</label>
+                    <textarea class="form-control  $errors->has('tags') ? 'error' : '' " name="tags" id="tags"
+                        rows="4"></textarea>
+
+                    @if ($errors->has('tags'))
+                    <div class="error">
+                        <p>Veuillez saisir votre tags</p> 
+                    </div>
+                    @endif
+                </div>
+                
+                <div class="mb-3">
+                 <label for="exampleInputid" class="form-label ">Photo de couverture de la serie </label>
+                 <input type="file" name="image" class="form-control " accept="image/jpg, image/png, image/jpeg" >
+                </div>
+
+                <input type="submit" name="send" value="Enregistré" class="btn btn-dark btn-block">
+           
+                
+                <a href="{{route('series.index')}}" class="btn btn-danger">Annuler</a>
+
+           
+            </form>
+        </div>
+    </body>
+
+    <style>
+        .container {
+        max-width: 500px;
+        margin: 50px auto;
+        text-align: left;
+        font-family: sans-serif;
+        }
+
+        form {
+        border: 1px solid #1A33FF;
+        background: #ecf5fc;
+        padding: 40px 50px 45px;
+        }
+
+        .form-control:focus {
+        border-color: #000;
+        box-shadow: none;
+        }
+
+        label {
+        font-weight: 600;
+        }
+
+        .error {
+        color: red;
+        font-weight: 400;
+        display: block;
+        padding: 6px 0;
+        font-size: 14px;
+        }
+
+        .form-control.error {
+        border-color: red;
+        padding: .375rem .75rem;
+        }
+    </style>
+@endsection
+
+
+
+
+
+
+   
+
+   
+        
+
 
    
 
@@ -118,4 +210,4 @@
     </style>
 
 
-@endsection
+

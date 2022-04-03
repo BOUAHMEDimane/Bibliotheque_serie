@@ -23,6 +23,17 @@ class SeriesController extends Controller
         $author = DB::table('users')->where('id', $author_id)->first();
         return view('serie/single', compact('serie', 'author'));
     }
+    
+    public function search() {
 
+        $search = request()->input('search');
+
+        $series = DB::table('series')->where('title', 'like', "%$search%")
+                    ->paginate(6);
+
+        return view('search');
+
+    }
+        
 
 }

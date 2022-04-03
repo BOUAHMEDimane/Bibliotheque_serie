@@ -1,9 +1,6 @@
 @extends('layouts/main')
 @section('content')
 
-  
-  
-
   <div class="col-md-12 col-lg-5 align-self-center d-inline-flex justify-content-end mb-3">
           <form action="search" method="get" class="d-inline-flex justify-content-end">
             <div class="input-group">

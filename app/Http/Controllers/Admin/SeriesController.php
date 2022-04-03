@@ -51,21 +51,21 @@ class SeriesController extends Controller
         ]);
 
 
-       
+        $author_name = request('author_name');
         $author_id = DB::table('users')->where('name',$author_name)->value('id');
         
         $serie = new Serie();
-        $serie->author_id = $request->author_id;
+        $serie->author_id = $author_id;
         $serie->title = $request->title;
         $serie->content = $request->content;
         $serie->acteurs = $request->acteurs;
         $serie->url = $request->title;
         $serie->tags = $request->tags;
-        $serie->image = $request->imageName;
+        $serie->status = $request->status;
         $serie->date = date('Y-m-d H:i:s');
         
         $serie->save();
-        return redirect(route('serie.create'))->with('successMsg', 'Félicitation !! Votre serie a  été crée avec succé');
+        return redirect(route('series.create'))->with('successMsg', 'Félicitation !! Votre serie a  été crée avec succé');
 
     }
 
@@ -75,9 +75,16 @@ class SeriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($url)
+    public function show($id)
     {
-        return view('serie.show');
+        
+        
+        $serie = Serie::where('title',$id)->first(); //get first serie with serie_nam == $serie_name
+        $author_id = $serie->author_id;
+        $author = DB::table('users')->where('id', $author_id)->first();
+                
+        return view('serie.show', compact('serie', 'author'));
+        
     }
 
     /**
@@ -88,8 +95,8 @@ class SeriesController extends Controller
      */
     public function edit($id)
     {
-        $serie = DB::table('serie')->find($id);
-        return view('serie.single', compact('serie'));
+        $serie = DB::table('series')->find($id);
+        return view('serie.edit', compact('serie'));
     
     }
 
@@ -115,7 +122,7 @@ class SeriesController extends Controller
         $serie->acteurs = request('acteurs');
         $serie->tags = request('tags');
         $serie->save();
-        return redirect(route('edit'))->with('successMsg', 'Félicitation !! Votre serie a  été modifier avec succé');
+        return redirect(route('series.index'))->with('successMsg', 'Félicitation !! Votre serie a  été modifier avec succé');
     
     }
 
@@ -130,7 +137,7 @@ class SeriesController extends Controller
         $serie = Serie::find($id);
         $serie->delete();
         //return redirect(route('create'));
-        return redirect(route('edit'))->with('successMsg', ' Votre serie a  été  supprimé avec succé');
+        return redirect(route('series.index'))->with('successMsg', ' Votre serie a  été  supprimé avec succé');
   
     }
 
@@ -142,7 +149,7 @@ class SeriesController extends Controller
         ]);
 
 
-        $recipe_id = DB::table('recipes')->where('url',$url)->value('id');
+        $serie_id = DB::table('series')->where('url',$url)->value('id');
         $author_name = request('author_name');
         $comment = new Comment();
         $author_id = DB::table('users')->where('name',$author_name)->value('id');
@@ -153,11 +160,11 @@ class SeriesController extends Controller
             $comment->author_id = 0;
         }
         
-        $comment->recipe_id = $recipe_id;
+        $comment->serie_id = $serie_id;
         $comment->content = request('comment');
         $comment->date = date('Y-m-d H:i:s');
         $comment->save();
 
-        return redirect(url('/recettes/'.$url));
+        return redirect(url('/series/'.$url));
     }
 }

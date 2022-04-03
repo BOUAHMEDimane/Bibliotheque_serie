@@ -25,14 +25,16 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/series', [SeriesController::class, 'index'])->name('series');
 Route::get('/series/{url}',[SeriesController::class, 'show'])->name('serie');
 //Route::get('admin/series', [\App\Http\Controllers\Admin\SeriesController::class, 'index']);
-//Route::resource('admin/series', SeriesController::class);
+Route::get('/search', [SeriesController::class, 'search'])->name('search');
+
+Route::resource('admin/series', \App\Http\Controllers\Admin\SeriesController::class);
 Route::get('/contact', [ContactsController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactsController::class, 'send'])->name('send');
 
 
-Route::get('admin/series', [\App\Http\Controllers\Admin\SeriesController::class, 'index'])->name('serie.crud');
-Route::get('admin/series/create', [\App\Http\Controllers\Admin\SeriesController::class, 'create'])->name('serie.create');
-Route::post('admin/series/create', [\App\Http\Controllers\Admin\SeriesController::class, 'store'])->name('serie.add');
+//Route::get('admin/series', [\App\Http\Controllers\Admin\SeriesController::class, 'index'])->name('serie.crud');
+//Route::get('admin/series/create', [\App\Http\Controllers\Admin\SeriesController::class, 'create'])->name('serie.create');
+//Route::post('admin/series/create', [\App\Http\Controllers\Admin\SeriesController::class, 'store'])->name('serie.add');
 
 
 
