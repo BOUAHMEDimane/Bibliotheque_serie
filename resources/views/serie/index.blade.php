@@ -33,7 +33,7 @@
                         <td>{{ $serie->name }}</td>
                         <td>{{ substr($serie->date, 0, 10) }}</td>
                         <td>
-                        <a href="{{route('series.show', $serie->title)}}" class="btn btn-success">Consulter</a>
+                        <a href="{{route('series.show', $serie->id)}}" class="btn btn-success">Consulter</a>
                         <a href="{{route('series.edit', $serie->id)}}" class="btn btn-info">Editer</a>
                         <a href="#" class="btn btn-danger" onclick="if(confirm('Voulez vous vraiment supprimer cet série?')){document.getElementById('form-{{$serie->id}}').submit()}" >Supprimer</a>
                         <form id= "form-{{$serie->id}}"action="{{route('series.destroy', $serie->id)}}" method="post">

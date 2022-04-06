@@ -38,3 +38,13 @@ Route::get('/contact', [ContactsController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactsController::class, 'send'])->name('send');
 
 
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
