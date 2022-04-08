@@ -55,7 +55,7 @@ class SeriesController extends Controller
         $author_id = DB::table('users')->where('name',$author_name)->value('id');
         
         $serie = new Serie();
-        $serie->author_id = $author_id;
+        $serie->author_id = $request->$author_id;
         $serie->title = $request->title;
         $serie->content = $request->content;
         $serie->acteurs = $request->acteurs;

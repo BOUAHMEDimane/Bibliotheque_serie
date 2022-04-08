@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Nom de l'auteur'</label>
+                    <label>Nom de l'auteur</label>
                     <input type="text" class="form-control  $errors->has('author_name') ? 'error' : '' " name="author_name"
                         id="author_name">
 
@@ -111,7 +111,7 @@
                  <input type="file" name="image" class="form-control " accept="image/jpg, image/png, image/jpeg" >
                 </div>
 
-                <input type="submit" name="send" value="Enregistré" class="btn btn-dark btn-block">
+                <input type="submit" name="send" value="Enregistrer" class="btn btn-primery btn-block">
            
                 
                 <a href="{{route('series.index')}}" class="btn btn-danger">Annuler</a>
