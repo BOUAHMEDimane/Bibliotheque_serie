@@ -2,22 +2,26 @@
 
 namespace Database\Factories;
 
-use Faker\Generator as Faker;
+
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use App\Models\User;
 
 
 class UserFactory extends Factory
 {
     /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = User::class;
+
+    /**
      * Define the model's default state.
      *
      * @return array
      */
-    protected $model = User::class;
-
-
     public function definition()
     {
         return [
@@ -42,4 +46,6 @@ class UserFactory extends Factory
             ];
         });
     }
+
+   
 }

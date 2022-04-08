@@ -79,7 +79,7 @@ class SeriesController extends Controller
     {
         
         
-        $serie = Serie::where('title',$id)->first(); //get first serie with serie_nam == $serie_name
+        $serie = Serie::where($id)->first(); //get first serie with serie_nam == $serie_name
         $author_id = $serie->author_id;
         $author = DB::table('users')->where('id', $author_id)->first();
                 
