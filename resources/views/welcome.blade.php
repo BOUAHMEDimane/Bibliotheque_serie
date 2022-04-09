@@ -1,5 +1,11 @@
 @extends('layouts/main')
 @section('content')
+<div>
+    <h1 class="text-justify" >BIEN VENU sur le site de Biblioserie</h1>
+    <h2>Vous pouvez Consulter les séries et ajouter si vous en souhaiter!!</h2>
+    <h3>avec le plaisir de recevoire tous vos précieux message dans la rubrique contacte</h3>
+    <h3> On vous souhaite de passer un agreable moment sur le site</h3>
+</div>
 @foreach($series as $serie)
         <div class="grid-x align-center">
             <div class="cell medium-8">

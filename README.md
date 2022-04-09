@@ -25,7 +25,7 @@ Le site est composé de :
 ## Les parties implémentées
 - La page d’Accueil affichant les 3 dernières série est accessible soit en cliquant sur le bouton **Home** dans le menu BiblioSerie ou bien via l'URL http://localhost:8000  
 - La page series affiche une liste de toutes les séries est accessible soit en cliquant sur le bouton **Series** dans le menu BiblioSerie ou bien via l'URL http://localhost:8000/series  
-- La page d’une série sera affichée après avoir cliquée sur sont titre dans la liste des série ou bien via l'URL http://localhost:8000/series/{url_series}, sachant que {url_series} c'est le titre de la série
+- La page d’une série sera affichée après avoir cliquée sur sont titre dans la liste des séries ou bien via l'URL http://localhost:8000/series/{url_series}, sachant que {url_series} c'est le titre de la série
 - La page de contact est accessible soit en cliquant sur le bouton **Contact** dans le menu BiblioSerie ou bien via l'URL  http://localhost:8000/contact 
 
 # le CRUD de série:
@@ -34,3 +34,5 @@ Le site est composé de :
     - Pour la suppression d'une serie il faut cliquer sur le bouton `supprimer`à côté de la serie qu'on veut supprimer,un pop up pour alerter si on veut confirmer la suppression, une fois confirmé avec ok, la serie sera supprimé de la table et un message indiquant que la recette a bien été supprimée sera affiché sur la même page 
     - Pour l’édition d'une serie il faut cliquer sur le boutton `Editer` à côté de la series qu'on veut modifier ou bien aller sur l'URL http://localhost:8000/admin/series/{id_series}/edit une nouvelle page serra charger avec formulaire pour modifier les champs ,un  message d'erreur signal le champs qui manque a remplir une fois on clique sur le boutton enregistré  on sera rediriger vers http://localhost:8000/admin/series  et un message indiquant que la serie a bien été modifier sera affiché sur la même page et on aura la série qui modifier dans la table  
     - Pour la consultation d'une serie il faut cliquer sur le boutton `consulter` à côté de la series qu'on veut Consulter ou bien aller sur l'URL http://localhost:8000/admin/series/{id_series}/{id_series}   et cliquer sur le bouton `Annuler` pour revenir a la page du CRUD . 
+## Diffeculter rencontré:
+- application cassé a cause de jetstream alors sa ma pris le temps pour la récupéré 

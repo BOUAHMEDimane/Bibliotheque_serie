@@ -52,10 +52,10 @@ class SeriesController extends Controller
 
 
         $author_name = request('author_name');
-        $author_id = DB::table('users')->where('name',$author_name)->value('id');
+        $author_Id = DB::table('users')->where('name',$author_name)->value('id');
         
         $serie = new Serie();
-        $serie->author_id = $request->$author_id;
+        $serie->author_id = $author_Id;
         $serie->title = $request->title;
         $serie->content = $request->content;
         $serie->acteurs = $request->acteurs;
@@ -79,7 +79,7 @@ class SeriesController extends Controller
     {
         
         
-        $serie = Serie::where($id)->first(); //get first serie with serie_nam == $serie_name
+        $serie = DB::table('series')->where('id', $id)->first(); //get first serie with serie_nam == $serie_name
         $author_id = $serie->author_id;
         $author = DB::table('users')->where('id', $author_id)->first();
                 

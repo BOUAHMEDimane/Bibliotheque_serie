@@ -111,7 +111,7 @@
                  <input type="file" name="image" class="form-control " accept="image/jpg, image/png, image/jpeg" >
                 </div>
 
-                <input type="submit" name="send" value="Enregistrer" class="btn btn-primery btn-block">
+                <input type="submit" name="send" value="Enregistrer" class="btn btn-dark btn-block">
            
                 
                 <a href="{{route('series.index')}}" class="btn btn-danger">Annuler</a>
