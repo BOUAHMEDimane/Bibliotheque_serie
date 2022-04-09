@@ -1,10 +1,19 @@
 @extends('layouts/main')
 @section('content')
 <div>
-    <h1 class="text-justify" >BIEN VENU sur le site de Biblioserie</h1>
-    <h2>Vous pouvez Consulter les séries et ajouter si vous en souhaiter!!</h2>
-    <h3>avec le plaisir de recevoire tous vos précieux message dans la rubrique contacte</h3>
-    <h3> On vous souhaite de passer un agreable moment sur le site</h3>
+    <div class="p-3 mb-2 bg-primary text-white">
+        <h1 class="text-center" >BIENVENU sur le site de Biblioserie</h1>
+    </div>
+    <div class="p-3 mb-2 bg-success text-white">
+        <h2>Vous pouvez Consulter les séries et ajouter si vous en souhaiter!!</h2> 
+    </div>
+    <div class="p-3 mb-2 bg-warning text-dark">
+        <h3>avec le plaisir de recevoire tous vos précieux message dans la rubrique contacte</h3>
+        <h3> On vous souhaite de passer un agreable moment sur le site</h3>
+    </div>
+    
+    
+    
 </div>
 @foreach($series as $serie)
         <div class="grid-x align-center">
