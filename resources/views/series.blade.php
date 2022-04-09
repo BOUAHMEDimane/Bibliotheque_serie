@@ -20,7 +20,7 @@
                 <div class="blog-post">
                     <h3><a href=" {{ url('series/'.$serie->url.'/') }} ">{{ $serie->title }}</a></h3>  
                     <h3><small>{{ substr($serie->date, 0, 10) }}</small></h3>
-                    <!--<img class="thumbnail" src="../media/images/AAA" width="100%">-->
+                    <img class="thumbnail" src="../media/images/BBB.jpg" width="100%">
                     <p><strong>{{ $serie->content }}</strong></p>
                     <div class="callout">
                         <ul class="menu simple">

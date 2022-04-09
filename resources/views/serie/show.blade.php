@@ -6,10 +6,11 @@
                     <h3>Author: {{ $author->name }}</h3>
                     <h3>Titre : {{ $serie->title }}</h3>
                     <h3><small>Date de publication : {{ substr($serie->date, 0, 10) }}</small></h3>
-                    <!--<img class="thumbnail" src="../media/images/AAA" width="100%">-->
+                    <img src="{{Storage::url($image->path)}}" alt="">
                     <h3>Contenu</h3>
                     <p><strong>{{ $serie->content }}</strong></p>
-                    <span>{{$image->path}}</span>
+                    
+                    
                     <div class="callout">
                         <ul class="menu simple">
                             <li><a href="#">Comments: ......</a></li>

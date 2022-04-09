@@ -23,12 +23,12 @@ class SeriesController extends Controller
         $serie = DB::table('series')->where('url',$url)->first(); //get first serie with url == $url
         $author_id = $serie->author_id;
         
-        $image = DB::table('images')->where('serie_id',$serie->id)->first();
-        $imagee = $image->path;
+        //$image = DB::table('images')->where('serie_id',$serie->id)->first();
+        //$imagee = $image->path;
         
         $author = DB::table('users')->where('id', $author_id)->first();
         
-        return view('serie/single', compact('serie', 'author', 'image'));
+        return view('serie/single', compact('serie', 'author'));
     }
     
     /****afficher la liste des series saisie dans la barre de recherche*****/

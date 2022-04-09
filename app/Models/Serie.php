@@ -32,7 +32,7 @@ class Serie extends Model
 
    public function image()
    {
-       return $this->haseOne(Image::class);
+       return $this->hasOne(Image::class, 'serie_id');
    }
 
 
