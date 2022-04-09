@@ -12,7 +12,7 @@
                     
                     <div class="callout">
                         <ul class="menu simple">
-                            <li><a href="#">Comments: ......</a></li>
+                            <li><a href="#">Comments: {{$commentaire}}</a></li>
                         </ul>
              
                     </div>

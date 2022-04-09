@@ -17,6 +17,7 @@ class CreateCommentsTable extends Migration
             $table->id();
             $table->mediumText('content');
             $table->datetime('date');
+            //$table->timestamps();
             $table->BigInteger('author_id');
             $table->foreign('author_id')
             ->references('id')

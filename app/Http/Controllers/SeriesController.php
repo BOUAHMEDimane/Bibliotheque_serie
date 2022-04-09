@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -28,7 +30,13 @@ class SeriesController extends Controller
         
         $author = DB::table('users')->where('id', $author_id)->first();
         
-        return view('serie/single', compact('serie', 'author'));
+        $serie_id = $serie->id;
+        //dd($serie_id);
+        $comment = DB::table('comments')->where('serie_id', $serie_id)->first();
+        $commentaire = $comment->content;
+        //dd($commentaire);
+
+        return view('serie/single', compact('serie', 'author', 'commentaire'));
     }
     
     /****afficher la liste des series saisie dans la barre de recherche*****/
