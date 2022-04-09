@@ -75,7 +75,7 @@
                     @endif
                 </div>
 
-                <input type="submit" name="send" value="Submit" class="btn btn-dark btn-block">
+                <input type="submit" name="send" value="Submit" class="btn btn-primary btn-block">
             </form>
         </div>
     </body>

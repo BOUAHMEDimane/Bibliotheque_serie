@@ -5,7 +5,7 @@
 @section('content') 
 
     <body>
-        <div class="container mt-5">
+        <div >
 
             <!-- Success message -->
             @if(Session::has('successMsg'))
@@ -19,7 +19,7 @@
             {{ csrf_field() }}
 
                 <div class="form-group">
-                    <label>title</label>
+                    <label>Titre de la série</label>
                     <input type="text" class="form-control  $errors->has('title') ? 'error' : '' " name="title" id="title">
 
                     <!-- Error -->
@@ -56,20 +56,20 @@
 
                 <div class="form-group">
                     <label>Contenu</label>
-                    <input type="text" class="form-control  $errors->has('content') ? 'error' : '' " name="content"
-                        id="content">
+                    <textarea type="text" class="form-control  $errors->has('content') ? 'error' : '' " name="content"
+                        id="content" rows="4"></textarea>
 
                     @if ($errors->has('content'))
                     <div class="error">
-                        $errors->first('content') 
+                    <p>Veuillez saisir le contenu de la série</p> 
                     </div>
                     @endif
                 </div>
 
                 <div class="form-group">
                     <label>date</label>
-                    <textarea class="form-control  $errors->has('date') ? 'error' : '' " name="date" id="date"
-                        rows="4"></textarea>
+                    <input type = "date" class="form-control  $errors->has('date') ? 'error' : '' " name="date" id="date"
+                        >
 
                     @if ($errors->has('date'))
                     <div class="error">
@@ -85,19 +85,15 @@
 
                     @if ($errors->has('status'))
                     <div class="error">
-                        $errors->first('status') 
+                    <p>Veuillez saisir le status</p> 
                     </div>
                     @endif
                 </div>
 
-
-                
-
-
                 <div class="form-group">
                     <label>Tags</label>
                     <textarea class="form-control  $errors->has('tags') ? 'error' : '' " name="tags" id="tags"
-                        rows="4"></textarea>
+                        rows="2"></textarea>
 
                     @if ($errors->has('tags'))
                     <div class="error">
@@ -111,10 +107,10 @@
                  <input type="file" name="image" class="form-control " accept="image/jpg, image/png, image/jpeg" >
                 </div>
 
-                <input type="submit" name="send" value="Enregistrer" class="btn btn-dark btn-block">
+                <input type="submit" name="send" value="Enregistrer" class="btn btn-primary btn-block">
            
                 
-                <a href="{{route('series.index')}}" class="btn btn-danger">Annuler</a>
+                <a href="{{route('series.index')}}" class="btn btn-danger btn-block">Annuler</a>
 
            
             </form>
