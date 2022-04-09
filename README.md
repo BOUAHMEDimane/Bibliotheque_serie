@@ -28,7 +28,7 @@ Le site est composé de :
 - La page d’une série sera affichée après avoir cliquée sur sont titre dans la liste des séries ou bien via l'URL http://localhost:8000/series/{url_series}, sachant que {url_series} c'est le titre de la série
 - La page de contact est accessible soit en cliquant sur le bouton **Contact** dans le menu BiblioSerie ou bien via l'URL  http://localhost:8000/contact 
 
-# le CRUD de série:
+### le CRUD de série:
 - Pour accéder a la page du CRUD de série il faut aller sur l'URL http://localhost:8000/admin/series 
     - Pour l’ajout d'une série, il faut cliquer sur le boutton Ajouter une nouvelle serie ou bien aller sur l'URL http://localhost:8000/admin/series/create , une nouvelle page serra charger avec formulaire pour remplir les champs et  un  message d'erreur signal le champs qui manque a remplir et un message indiquant que la serie a bien été créée sera affiché sur la même page.
     - Pour la suppression d'une serie il faut cliquer sur le bouton `supprimer`à côté de la serie qu'on veut supprimer,un pop up pour alerter si on veut confirmer la suppression, une fois confirmé avec ok, la serie sera supprimé de la table et un message indiquant que la recette a bien été supprimée sera affiché sur la même page 
