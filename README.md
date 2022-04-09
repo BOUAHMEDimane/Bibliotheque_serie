@@ -36,3 +36,4 @@ Le site est composé de :
     - Pour la consultation d'une serie il faut cliquer sur le boutton `consulter` à côté de la series qu'on veut Consulter ou bien aller sur l'URL http://localhost:8000/admin/series/{id_series}/{id_series}   et cliquer sur le bouton `Annuler` pour revenir a la page du CRUD . 
 ## Diffeculter rencontré:
 - application cassé a cause de jetstream alors sa ma pris le temps pour la récupéré 
+- tutoriel suivi sur internet
