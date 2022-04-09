@@ -37,6 +37,6 @@ Le site est composé de :
 
 ## 4-Ajout et uploader de fichiers média pour les séries
 - Pour l'ajout d'une image a une série, dans la page de création d'une série soit par le boutton Ajouter une nouvelle serie ou bien aller sur l'URL http://localhost:8000/admin/series/create un input file permet de charger une image  et une fois l'image et choisi , on revien a la list des série soit en cliquant sur le boutton annuler ou bien via l'URL http://localhost:8000/admin/series/create et on clique sur le boutton consulter de la nouvelle série ajouter et on aura l'image qui s'affiche.
-## Diffeculter rencontré:
+## Remarque et diffeculter rencontré:
 - application cassé a cause de jetstream alors sa ma pris le temps pour la récupéré 
-- tutoriel suivi sur internet
+- tutoriel suivi sur internet 
