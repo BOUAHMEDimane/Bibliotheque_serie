@@ -31,11 +31,12 @@ Le site est composé de :
 ### le CRUD de série:
 - Pour accéder a la page du CRUD de série il faut aller sur l'URL http://localhost:8000/admin/series 
     - Pour l’ajout d'une série, il faut cliquer sur le boutton `Ajouter une nouvelle serie`  ou bien aller sur l'URL http://localhost:8000/admin/series/create , une nouvelle page serra charger avec formulaire pour remplir les champs et  un  message d'erreur signal le champs qui manque a remplir et un message indiquant que la serie a bien été créée sera affiché sur la même page.
-    - Pour la suppression d'une serie il faut aller sur l'URL http://localhost:8000/admin/series cliquer sur le bouton `supprimer`à côté de la serie qu'on veut supprimer,un pop up pour alerter si on veut confirmer la suppression, une fois confirmé avec ok, la serie sera supprimé de la table et un message indiquant que la série a bien été supprimée sera affiché sur la même page 
+    - Pour la suppression d'une serie il faut aller sur l'URL http://localhost:8000/admin/series cliquer sur le bouton `supprimer`à côté de la serie qu'on veut supprimer,un `pop up`  pour alerter si on veut confirmer la suppression, une fois confirmé avec ok, la serie sera supprimé de la table et un message indiquant que la série a bien été supprimée sera affiché sur la même page 
     - Pour l’édition d'une serie il faut cliquer sur le boutton `Editer` à côté de la series qu'on veut modifier ou bien aller sur l'URL http://localhost:8000/admin/series/{id_series}/edit une nouvelle page serra charger avec formulaire pour modifier les champs ,un  message d'erreur signal le champs qui manque a remplir une fois on clique sur le boutton  `Enregistrer` on sera rediriger vers http://localhost:8000/admin/series  et un message indiquant que la serie a bien été modifier sera affiché sur la même page et on aura la série qui modifier dans la table  
     - Pour la consultation d'une serie il faut cliquer sur le boutton `Consulter` à côté de la series qu'on veut Consulter ou bien aller sur l'URL http://localhost:8000/admin/series/{id_series}/{id_series}   et cliquer sur le bouton `Annuler` pour revenir a la page du CRUD de série 
 
 ## 4-Ajout et uploader de fichiers média pour les séries
 - Pour l'ajout d'une image a une série, dans la page de création d'une série soit par le boutton `Ajouter une nouvelle serie` ou bien aller sur l'URL http://localhost:8000/admin/series/create , cliquer sur le boutton `Choisir un fichier` qui  permet de charger une image  et une fois l'image et choisi , on revient a la liste des séries soit en cliquant sur le boutton `Annuler` ou bien via l'URL http://localhost:8000/admin/series/create et on clique sur le boutton  `consulter` de la nouvelle série ajouter et on aura l'image qui s'affiche.
-## Diffeculter rencontré:
+## Remarque et diffeculter rencontré:
 - application cassé a cause de jetstream alors sa ma pris le temps pour la récupéré 
+- suivie des tutorial sur internet
