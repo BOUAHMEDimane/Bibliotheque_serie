@@ -9,6 +9,7 @@
                     <!--<img class="thumbnail" src="../media/images/AAA" width="100%">-->
                     <h3>Contenu</h3>
                     <p><strong>{{ $serie->content }}</strong></p>
+                    <span>{{$image->path}}</span>
                     <div class="callout">
                         <ul class="menu simple">
                             <li><a href="#">Comments: ......</a></li>

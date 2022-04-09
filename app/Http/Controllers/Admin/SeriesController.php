@@ -82,8 +82,10 @@ class SeriesController extends Controller
         $serie = DB::table('series')->where('id', $id)->first(); //get first serie with serie_nam == $serie_name
         $author_id = $serie->author_id;
         $author = DB::table('users')->where('id', $author_id)->first();
-                
-        return view('serie.show', compact('serie', 'author'));
+        $image = DB::table('images')->where('serie_id',$serie->id)->first();
+        
+        
+        return view('serie.show', compact('serie', 'author', 'image'));
         
     }
 

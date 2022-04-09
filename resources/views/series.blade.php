@@ -1,22 +1,17 @@
 @extends('layouts/main')
 @section('content')
-
-  
-  
-
   <div class="col-md-12 col-lg-5 align-self-center d-inline-flex justify-content-end mb-3">
-          <form action="search" method="get" class="d-inline-flex justify-content-end">
-            <div class="input-group">
-              <input type="text" name="search" class="form-control" placeholder="chercher un titre de série... ">
-              <div class="input-group-btn">
-                <button type="submit" class="btn btn-info"><span class="fa fa-search"></span>
-                  Chercher 
-                </button>
-              </div>
-            </div>
-          </form>
+    <form action="search" method="get" class="d-inline-flex justify-content-end">
+      <div class="input-group">
+        <input type="text" name="search" class="form-control" placeholder="chercher un titre de série... ">
+        <div class="input-group-btn">
+          <button type="submit" class="btn btn-info"><span class="fa fa-search"></span>
+            Chercher 
+          </button>
         </div>
-
+      </div>
+    </form>
+  </div>
   
   @if ($url == null)
     @foreach($series as $serie)
