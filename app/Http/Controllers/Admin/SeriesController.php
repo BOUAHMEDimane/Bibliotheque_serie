@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Comment;
 use App\Models\Serie;
+use App\Models\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class SeriesController extends Controller
 {
@@ -50,7 +52,6 @@ class SeriesController extends Controller
             'tags'=>'required',
         ]);
 
-
         $author_name = request('author_name');
         $author_Id = DB::table('users')->where('name',$author_name)->value('id');
         
@@ -63,8 +64,25 @@ class SeriesController extends Controller
         $serie->tags = $request->tags;
         $serie->status = $request->status;
         $serie->date = date('Y-m-d H:i:s');
+
+        
+        $filename = time().'.'.$request->avatar->extension();
+        //récupére le chemin absolut de l'image
+        $image_path =  $request->file('avatar')->storeAs(
+            'avatars',
+            $filename,
+            'public'
+        );
         
         $serie->save();
+
+        $image = new Image();
+        $image->path = $image_path;
+        $image->serie_id = $serie->id; 
+        //dd($image->serie_id);
+        $serie->image()->save($image);
+        //dd('image crée');
+       
         return redirect(route('series.create'))->with('successMsg', 'Félicitation !! Votre serie a  été crée avec succé');
 
     }
@@ -82,8 +100,10 @@ class SeriesController extends Controller
         $serie = DB::table('series')->where('id', $id)->first(); //get first serie with serie_nam == $serie_name
         $author_id = $serie->author_id;
         $author = DB::table('users')->where('id', $author_id)->first();
-                
-        return view('serie.show', compact('serie', 'author'));
+        $image = DB::table('images')->where('serie_id',$serie->id)->first();
+        
+        
+        return view('serie.show', compact('serie', 'author', 'image'));
         
     }
 
