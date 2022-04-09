@@ -14,7 +14,7 @@
             </div>
             @endif
 
-            <form  method="post" action="{{route('series.store')}}">
+            <form  method="post" action="{{route('series.store')}}" enctype="multipart/form-data">
 
             {{ csrf_field() }}
 
@@ -103,8 +103,8 @@
                 </div>
                 
                 <div class="mb-3">
-                 <label for="exampleInputid" class="form-label ">Photo de couverture de la serie </label>
-                 <input type="file" name="image" class="form-control " accept="image/jpg, image/png, image/jpeg" >
+                    <label for="avatar">Choisir une photo de la serie</label>
+                    <input type="file"  id="avatar" name="avatar" accept="image/png, image/jpeg, image/jpg">
                 </div>
 
                 <input type="submit" name="send" value="Enregistrer" class="btn btn-primary btn-block">
