@@ -22,18 +22,19 @@ class SeriesController extends Controller
     /****afficher une seul  serie*****/
     public function show($url) {
         
-        $serie = DB::table('series')->where('url',$url)->first(); //get first serie with url == $url
-       
+        $serie = \App\Models\Serie::where('url',$url)->first(); //get first serie with url == $url
+        //$url = str_replace(' ', '_', $url);
+        //dd($serie);
         $author_Id = $serie->author_id;
-        $serie_id = $serie->id;
-        
+        //dd($author_Id);
         
         //$image = DB::table('images')->where('serie_id',$serie->id)->first();
         //$imagee = $image->path;
         
-        $author = DB::table('users')->where('id', $author_Id)->first(); 
+        $author = DB::table('users')->where('id', $author_Id)->first();
         
-        //récupéré les commentaire de la série qui correcpond a cette le $url 
+        $serie_id = $serie->id;
+        //dd($serie_id);
         $comments = DB::table('comments')->where('serie_id', $serie_id)->get();
         //dd($comments);
         
