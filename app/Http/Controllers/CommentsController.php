@@ -21,25 +21,22 @@ class CommentsController extends Controller
         $serie_id = request('id');
         //dd($serie_id);
 
+        $serie = Serie::find($serie_id);
+        $author_Id = $serie->author_id;
+        $url = $serie->title;
+        //dd($url);
         
-        //$serie = DB::table('series')->where('id ',$serie_id);
         
-        //$author_Id = $serie->author_id;
-        //dd($author_id);
-       
-        $comment = request('content');
-        //dd($comment);
-        $comment = request('serie_id');
-        //$contact->name = $request->name;
-
         $comment = new Comment();
         $comment->content = $request->content;
-        $comment->author_id = $serie_id;
+        $comment->author_id = $author_Id;
         $comment->serie_id= $serie_id;
-
+         
         $comment->save();
+        
+       
 
-        return redirect(route('comments.index'))->with('successMsg', 'Félicitation !! Votre serie a  été crée avec succé');
+        return redirect(route('serie', $url))->with('successMsg', ' Votre commentaire a  été enregistré avec succé');
 
 
         

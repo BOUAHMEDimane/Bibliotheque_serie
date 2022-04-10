@@ -1,18 +1,18 @@
 @extends('layouts/main')
 @section('content')
-    <div class="grid-x align-center">
+    <div class="grid-x align-center mt-3">
         <div class="cell medium-8">
             <div class="blog-post">
                 <h3>Author: {{ $author->name }}</h3>
                 <h3>Titre : {{ $serie->title }}</h3>
                 <h3><small>Date de publication : {{ substr($serie->date, 0, 10) }}</small></h3>
-                <img class="thumbnail" src="../media/images/AAA.jpg" width="100%">
+                <img class="thumbnail mt-5" src="../media/images/AAA.jpg" width="100%">
                 <h3>Contenu</h3>
                 <p><strong>{{ $serie->content }}</strong></p>
             </div>    
             <hr>
             <div>Commentaire</div>
-            <form  method="post" action=" {{route('comments.store',$serie->url)}}">
+            <form  method="post" action=" {{route('comments.store',$serie->id)}}">
 
             <div class="container mt-5">
                  <!-- Success message -->
@@ -32,11 +32,20 @@
                                 <p>Veuillez saisir votre commentaire</p> 
                             </div>
                             @endif
-                            <ul>
-                                <li>{{$comment->content}}</li>
-                            </ul>
+                            
                         </div>
                         <input type="submit" name="send" value="Submit" class="btn btn-primary ">
+                        <div>
+                            <div>
+                            <h3>liste des commantaires</h3>
+                            </div>
+                            @foreach($comments as $comment)
+                            <ul>  
+                                <li>{{$comment->content}}</li>
+                            </ul>
+                            @endforeach
+                        </div>
+                    
                     </form>
                 </div>
 

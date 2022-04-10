@@ -39,7 +39,7 @@ Route::get('/contact', [ContactsController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactsController::class, 'send'])->name('send');
 
 /**********route pour les commentaire */
-Route::get('/series/{url}/comments', [CommentsController::class, 'index'])->name('comments.index');
+Route::get('/series/{id}', [CommentsController::class, 'index'])->name('comments.index');
 Route::post('/comments/{id}', [CommentsController::class, 'store'])->name('comments.store');
 
 /******route pour l'authentification avec jetstream****************/
