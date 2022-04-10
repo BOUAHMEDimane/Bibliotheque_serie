@@ -24,8 +24,7 @@
                     <p><strong>{{ $serie->content }}</strong></p>
                     <div class="callout">
                         <ul class="menu simple">
-                            <li>Author: {{ $serie->name }}</li>
-                          
+                            <h5>Autheur:<strong> {{ $serie->name }}</strong></h5>
                         </ul>
                     </div>
                 </div>
@@ -45,8 +44,7 @@
                     <p><strong>{{ $serie->content }}</strong></p>
                     <div class="callout">
                         <ul class="menu simple">
-                            <li><a href="#">Author: {{ $serie->name }}</a></li>
-                            <li><a href="#">Comments: 3</a></li>
+                            <h5> Autheur: <strong> {{ $serie->name }}</strong></h5>
                         </ul>
                     </div>
                 </div>

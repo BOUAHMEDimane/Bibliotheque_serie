@@ -29,14 +29,18 @@ Le site est composé de :
 - La page de contact est accessible soit en cliquant sur le bouton **Contact** dans le menu BiblioSerie ou bien via l'URL  http://localhost:8000/contact 
 
 ### le CRUD de série:
-- Pour accéder a la page du CRUD de série il faut aller sur l'URL http://localhost:8000/admin/series 
-    - Pour l’ajout d'une série, il faut cliquer sur le boutton Ajouter une nouvelle serie ou bien aller sur l'URL http://localhost:8000/admin/series/create , une nouvelle page serra charger avec formulaire pour remplir les champs et  un  message d'erreur signal le champs qui manque a remplir et un message indiquant que la serie a bien été créée sera affiché sur la même page.
+- Pour accéder a la page du CRUD la page est accessible soit en cliquant sur le bouton **Admin** dans le menu BiblioSerie ou bien via l'URL http://localhost:8000/admin/series 
+    - Pour l’ajout d'une série, il faut cliquer sur le boutton Ajouter une nouvelle serie ou bien aller sur l'URL http://localhost:8000/admin/series/create , une nouvelle page serra charger avec formulaire, dans le champs `Nom de l'auteur` il faut mettre un nom qui existe dans la base de donné et pour remplir les champs et  un  message d'erreur signal le champs qui manque a remplir et un message indiquant que la serie a bien été créée sera affiché sur la même page.
     - Pour la suppression d'une serie il faut aller sur l'URL http://localhost:8000/admin/series cliquer sur le bouton `supprimer`à côté de la serie qu'on veut supprimer,un pop up pour alerter si on veut confirmer la suppression, une fois confirmé avec ok, la serie sera supprimé de la table et un message indiquant que la recette a bien été supprimée sera affiché sur la même page 
     - Pour l’édition d'une serie il faut cliquer sur le boutton `Editer` à côté de la series qu'on veut modifier ou bien aller sur l'URL http://localhost:8000/admin/series/{id_series}/edit une nouvelle page serra charger avec formulaire pour modifier les champs ,un  message d'erreur signal le champs qui manque a remplir une fois on clique sur le boutton enregistré  on sera rediriger vers http://localhost:8000/admin/series  et un message indiquant que la serie a bien été modifier sera affiché sur la même page et on aura la série qui modifier dans la table  
     - Pour la consultation d'une serie il faut cliquer sur le boutton `consulter` à côté de la series qu'on veut Consulter ou bien aller sur l'URL http://localhost:8000/admin/series/{id_series}/{id_series}   et cliquer sur le bouton `Annuler` pour revenir a la page du CRUD de série 
 
+## 1-Gestion des commentaires 
+- dans la page qui affiche une seule série on trouve en dessous un formulaire de commentaire pour tester la fonctionnaliser,il faut saisir un commentaire et quand tu cliques sur le boutton `submit` , le commentaire sera enregistré en `base de donné` et si on revient en arrière et en raffréchit la page on le voit s'ajouter à la liste en dessous des commentaires, j' rencontré un bug et je n'ai pas u assez de temps pour le régler.
 ## 4-Ajout et uploader de fichiers média pour les séries
 - Pour l'ajout d'une image a une série, dans la page de création d'une série soit par le boutton Ajouter une nouvelle serie ou bien aller sur l'URL http://localhost:8000/admin/series/create un input file permet de charger une image  et une fois l'image et choisi , on revien a la list des série soit en cliquant sur le boutton annuler ou bien via l'URL http://localhost:8000/admin/series/create et on clique sur le boutton consulter de la nouvelle série ajouter et on aura l'image qui s'affiche.
+
 ## Remarque et diffeculter rencontré:
+- Comme je travaille tout seul j'ai pas u assez de temps pour développer plus de fonctionnalité , j'espère que pendant la correction vous allez le prendre sa en compte. 
 - application cassé a cause de jetstream alors sa ma pris le temps pour la récupéré 
-- tutoriel suivi sur internet 
+- tutoriel suivi sur internet et youtube. 
