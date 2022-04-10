@@ -21,6 +21,7 @@ class ContactFactory extends Factory
     public function definition()
     {
         return [
+        'id',
         'name',
         'email',
         'phone',

@@ -49,7 +49,7 @@ class SeriesController extends Controller
             'acteurs'=>'required',
             'content'=>'required',
             'date'=>'required',
-            'tags'=>'required',
+            'tags'=>'required', 
         ]);
 
         $author_name = request('author_name');

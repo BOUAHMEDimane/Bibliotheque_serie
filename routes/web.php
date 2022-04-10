@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SeriesController;
 use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\CommentsController;
 
 /****route pour la page d'aceuille*****/
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -37,8 +38,11 @@ Route::resource('admin/series', \App\Http\Controllers\Admin\SeriesController::cl
 Route::get('/contact', [ContactsController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactsController::class, 'send'])->name('send');
 
+/**********route pour les commentaire */
+Route::get('/series/{id}', [CommentsController::class, 'index'])->name('comments.index');
+Route::post('/comments/{id}', [CommentsController::class, 'store'])->name('comments.store');
 
-
+/******route pour l'authentification avec jetstream****************/
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

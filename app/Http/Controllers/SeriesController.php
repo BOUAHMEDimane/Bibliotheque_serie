@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -21,14 +23,22 @@ class SeriesController extends Controller
     public function show($url) {
         
         $serie = DB::table('series')->where('url',$url)->first(); //get first serie with url == $url
-        $author_id = $serie->author_id;
+       
+        $author_Id = $serie->author_id;
+        $serie_id = $serie->id;
+        
         
         //$image = DB::table('images')->where('serie_id',$serie->id)->first();
         //$imagee = $image->path;
         
-        $author = DB::table('users')->where('id', $author_id)->first();
+        $author = DB::table('users')->where('id', $author_Id)->first(); 
         
-        return view('serie/single', compact('serie', 'author'));
+        //récupéré les commentaire de la série qui correcpond a cette le $url 
+        $comments = DB::table('comments')->where('serie_id', $serie_id)->get();
+        //dd($comments);
+        
+
+        return view('serie/single', compact('serie', 'author', 'comments' ));
     }
     
     /****afficher la liste des series saisie dans la barre de recherche*****/
