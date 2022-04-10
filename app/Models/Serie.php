@@ -38,7 +38,7 @@ class Serie extends Model
 
    public function comments()
    {
-       return $this->hasMany(Comment::class, 'serie_id');
+       return $this->morphMany(Comment::class, 'commentable')->latest();
    }
 
 

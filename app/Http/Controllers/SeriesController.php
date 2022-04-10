@@ -32,11 +32,17 @@ class SeriesController extends Controller
         
         $serie_id = $serie->id;
         //dd($serie_id);
-        $comment = DB::table('comments')->where('serie_id', $serie_id)->first();
-        $commentaire = $comment->content;
+        $comments_users = DB::table('comments')->Join('series', 'series.id', '=', 'comments.serie_id');
+            
+            dd( $comments_users->content);
+        $comment = DB::table('comments')->where('serie_id', $serie_id);
+        
+        //$comments_users = DB::table('users')->Join('comments', 'comments.author_id', '=', 'users.id')
+        //    ->orderByDesc('comments.date')->get();
+        //$commentaire = $comment->content;
         //dd($commentaire);
 
-        return view('serie/single', compact('serie', 'author', 'commentaire'));
+        return view('serie/single', compact('serie', 'author'));
     }
     
     /****afficher la liste des series saisie dans la barre de recherche*****/

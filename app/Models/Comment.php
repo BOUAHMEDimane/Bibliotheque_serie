@@ -11,12 +11,20 @@ class Comment extends Model
     use HasFactory;
 
     
+    protected $guarded = [];
     protected $fillable = [
         'author_id',
         'serie_id',
         'content',
         'date',
     ];
+
+    
+    public function commentable()
+    {
+        return $this->morphTo();
+    }
+
 
     public function serie()
     {

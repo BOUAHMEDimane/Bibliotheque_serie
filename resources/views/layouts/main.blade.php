@@ -21,6 +21,7 @@
         <li><a href="{{ route('home')}}">Home</a></li>
         <li><a href="{{ route('series')}}">Series</a></li>
         <li><a href="{{ route('contact')}}">Contact</a></li>
+        <li><a href="admin/series">Admin</a></li>
       </ul>
     </div>
   </div>
