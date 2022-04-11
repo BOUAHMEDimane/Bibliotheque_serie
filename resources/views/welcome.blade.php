@@ -24,13 +24,17 @@
                     <img class="thumbnail" src="../media/images/CCC.jpg" width="100%">
                     <p><strong>{{ $serie->content }}</strong></p>
                     <div class="callout">
-                        <ul class="menu simple" aligne="center" >
+                     <ul class="menu simple" aligne="center" >
                             <li>Author: {{ $serie->name }}</li>
                             <li>Note :  <i class="fa fa-star fa-1x"  data-index="1"></i> </li>
                             <li><i class="fa fa-star fa-1x"  data-index="2"></i> </li>
                             <li><i class="fa fa-star fa-1x"  data-index="3"></i> </li>
                             <li><i class="fa fa-star fa-1x"  data-index="4"></i> </li>
                             <li><i class="fa fa-star fa-1x"  data-index="5"></i> </li>
+                            
+                             <ul class="menu simple">
+                            <h5>Autheur: <strong>{{ $serie->name }}</strong></h5>
+
                         </ul>
                     </div>
                     
